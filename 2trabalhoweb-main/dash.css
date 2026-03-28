@@ -1,0 +1,219 @@
+:root{
+    --cor-fundo1: #f8f9fa;
+    --cor-fundo2: #2c3e50;
+    --white-nav: white;
+    --cor-hover:#34495e;
+    --cor-hover2: #ffcc00;
+    --article--titulo:#004a8d;
+}
+
+*{
+    margin:0;
+    padding:0;
+}
+
+/* Coloca menu e main lado a lado */
+.dashboard-container{
+    display: flex;
+    align-items:stretch; /* garante que as duas colunas tenham a mesma altura */
+    flex:1; /* preenche todo o espaço vertical disponivel (vh) */
+}
+
+/* o conteúdo principal ocupa o resto da tela a direita*/
+main{
+    flex:1;
+    padding: 30px;
+    background-color: var(--cor-fundo1);
+    
+}
+
+/* Barra lateral de navegaçao*/
+nav {
+    width: 200px; /* largura fixa da barra lateral */
+    background-color:var(--cor-fundo2);/* azul escuro,cor da barra lateral */
+    padding: 20px;
+    min-height: 100vh; /* garante que a barra lateral ocupe toda a altura da tela */ 
+
+    display:flex;
+    flex-direction: column;  /*desfaz a linha horizontal do nav*/
+}
+
+nav ul{
+    display: flex;
+    flex-direction: column; /* desfaz a linha horizontal da parte 1*/
+    gap: 15px; /* Espaçamento entre os itens da lista */
+    padding:0; /* remove o preenchimento  padrao da lista*/
+    list-style: none; /* remove os marcadores padrao da lista*/
+}
+
+nav a {
+    color: var(--white-nav);
+    text-decoration: none;
+    display:block;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+nav a:hover{
+    background-color:var(--cor-hover);
+    color: var(--cor-hover2);
+}
+
+.perfil-usuario {
+    display:flex; /* Alinha o avatar e o nome do usuario horizontalmente*/
+    align-items: center;/* Centraliza verticalmente o avatar e o nome */
+    gap: 10px; /* Espaçamento entre o avatar  o nome */
+    color: white;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /*linha sutil separando o perfil do menu */
+
+    margin-top: auto; /* empurra o perfil para o final da barra lateral */
+}
+
+.perfil-usuario img {
+    width: 40px; /*largura do avatar*/
+    border-radius: 50%;/*foto redonda*/
+}
+.perfil-usuario span {
+    color: var(--white-nav);
+}
+.container-cards{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+article{
+    flex:1;
+    min-width: 250px;
+    background-color: var(--cor-nav);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+article h2{
+    color: var(--article--titulo);
+    margin-bottom: 10px;
+}
+
+article p{
+    margin-bottom: 20px;
+    color: #555;
+}
+
+body{
+    background-color: #dfdfdf;
+    font-family: 'Courier New', Courier, monospace;
+    color: #333333;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+footer{
+    background-color: #333;
+    color: var(--white-nav);
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+
+}
+
+.btn{
+    margin-top: auto;
+    display: inline-block;
+    text-align: center;
+    background-color: var(--article--titulo);
+    color: white;
+    padding:10px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+.btn:hover{
+    background-color: var(--cor-hover);
+}
+/*Formataçao fo formulário*/
+.container-form{
+    background-color: var(--white-nav);
+    max-width: 700px; /* Evita que o formulário fique muito largo em telas grandes */
+    margin: 20px auto; /* Centraliza o formulário horizontalmente */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.form-header{
+    margin-bottom: 25px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction: column; /* label em cima, input embaixo */
+    gap: 8px; /* Espaçamento entre label e input */
+    margin-bottom: 20px;
+}
+
+.form-row{
+    display: flex;
+    gap: 20px; /* Espaçamento entre os campos na mesma linha */
+}
+
+.flex-1 {flex:1;} /* Faz com que os campos na mesma linha tenham a mesma largura */
+
+label{
+    font-weight: bold;
+    color: #2c3e50;
+    font-size: 14px;
+}
+
+input, select{
+    padding: 12px;
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+input:focus{
+    border-color: var(--article--titulo);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0,74,141,0.1);
+}
+
+.btn-save{
+    background-color: #27ae60;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-cancel:hover{
+    color: red;
+    font-weight: bold;
+}
+
+.btn-login:hover{
+    color: var(--article--titulo);
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.error-alert{
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border-radius:4px;
+    font-size: 13px;
+    margin-bottom:15px;
+    border: 1px solid #f5c6cb;
+
+}
